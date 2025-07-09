@@ -1,0 +1,131 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .parent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      border-bottom: 2px solid green;
+      padding: 0 20px;
+      background-color: #f0f0f0;
+      position: sticky;
+      top: 0;
+    }
+
+    .parent__logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .parent__menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .parent__menu > a {
+      font-size: 1rem;
+      color: black;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    .parent__menu > a i {
+      margin-right: 6px;
+    }
+
+    .parent__menu > a:hover {
+      color: teal;
+    }
+
+    .container__main {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    [class^="container__main__info"] {
+      border: 1px solid gray;
+      padding: 15px;
+      width: 280px;
+      height: 300px;
+      border-radius: 15px;
+      background-color: white;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    [class^="container__main__info"]:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    [class^="container__main__info"] img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    [class^="container__main__info"] p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .container__footer {
+      height: 50px;
+      border-top: 1px solid #ccc;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media(max-width:990px){
+        .parent__menu{
+            display: none;
+        }
+        .parent{
+            justify-content: space-evenly;
+        }
+        .parent__logo{
+            width: 30vw;
+        }
+        .container__main {
+      
+      overflow-y: auto;
+      justify-content: center;
+      align-items: flex-start;
+      [class^="container__main"]{
+      width: 90%;
+    }
+      
+    }
+    }
